@@ -81,16 +81,36 @@ frontend/
 └── package.json
 ```
 
-### 📦 Install Backend Dependencies
-```
-cd backend
-npm install
-npm run dev
+##  Setup Instructions
+
+```bash
+git clone https://github.com/aman0603/E-comm.git
 ```
 
-📦 Install Frontend Dependencies
+**Create a .env file in the backend directory**
+
+PORT=5000
+MONGODB_URI=<Your MongoDB connection string>
+CORS_ORIGIN=<Your Frontend url>
+
+**Replace all placeholder values with your actual credentials.**
+
+**Run the backend server**
+
+### 📦 Install Backend Dependencies
+
+```bash
+cd backend
+npm install
+node server.js
 ```
+### 📦 Install Frontend Dependencies
+
+```bash
 cd frontend
 npm install
 npm run dev
 ```
+
+
+
