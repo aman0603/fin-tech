@@ -1,5 +1,4 @@
-// File: backend/controllers/transactionController.js
-const Transaction = require('../models/Transaction');
+const Transaction = require("../models/Transaction");
 
 exports.getAllTransactions = async (req, res, next) => {
   try {
@@ -13,7 +12,7 @@ exports.getAllTransactions = async (req, res, next) => {
       if (endDate) filter.date.$lte = new Date(endDate);
     }
     const transactions = await Transaction.find(filter).sort({ date: -1 });
-    res.json({ status: 'success', data: transactions });
+    res.json({ status: "success", data: transactions });
   } catch (err) {
     next(err);
   }
@@ -22,7 +21,7 @@ exports.getAllTransactions = async (req, res, next) => {
 exports.createTransaction = async (req, res, next) => {
   try {
     const transaction = await Transaction.create(req.body);
-    res.status(201).json({ status: 'success', data: transaction });
+    res.status(201).json({ status: "success", data: transaction });
   } catch (err) {
     next(err);
   }
@@ -31,8 +30,11 @@ exports.createTransaction = async (req, res, next) => {
 exports.getTransactionById = async (req, res, next) => {
   try {
     const transaction = await Transaction.findById(req.params.id);
-    if (!transaction) return res.status(404).json({ status: 'error', message: 'Transaction not found' });
-    res.json({ status: 'success', data: transaction });
+    if (!transaction)
+      return res
+        .status(404)
+        .json({ status: "error", message: "Transaction not found" });
+    res.json({ status: "success", data: transaction });
   } catch (err) {
     next(err);
   }
@@ -40,9 +42,16 @@ exports.getTransactionById = async (req, res, next) => {
 
 exports.updateTransaction = async (req, res, next) => {
   try {
-    const transaction = await Transaction.findByIdAndUpdate(req.params.id, req.body, { new: true });
-    if (!transaction) return res.status(404).json({ status: 'error', message: 'Transaction not found' });
-    res.json({ status: 'success', data: transaction });
+    const transaction = await Transaction.findByIdAndUpdate(
+      req.params.id,
+      req.body,
+      { new: true }
+    );
+    if (!transaction)
+      return res
+        .status(404)
+        .json({ status: "error", message: "Transaction not found" });
+    res.json({ status: "success", data: transaction });
   } catch (err) {
     next(err);
   }
@@ -51,8 +60,11 @@ exports.updateTransaction = async (req, res, next) => {
 exports.deleteTransaction = async (req, res, next) => {
   try {
     const transaction = await Transaction.findByIdAndDelete(req.params.id);
-    if (!transaction) return res.status(404).json({ status: 'error', message: 'Transaction not found' });
-    res.json({ status: 'success', message: 'Transaction deleted' });
+    if (!transaction)
+      return res
+        .status(404)
+        .json({ status: "error", message: "Transaction not found" });
+    res.json({ status: "success", message: "Transaction deleted" });
   } catch (err) {
     next(err);
   }
