@@ -1,7 +1,7 @@
 const { body, validationResult } = require("express-validator");
 
 const predefinedCategories = [
- 'Salary', 'Freelance', 'Investment',
+  'Salary', 'Investment',
   'Food & Dining', 'Transportation', 'Shopping',
   'Entertainment', 'Bills & Utilities', 'Healthcare',
   'Education', 'Travel', 'Personal Care', 'Other'
