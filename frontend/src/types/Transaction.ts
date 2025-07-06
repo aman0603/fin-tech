@@ -17,17 +17,16 @@ export interface Budget {
 
 // Updated categories to match your backend validation
 export const EXPENSE_CATEGORIES = [
-  'Food',
-  'Rent', 
-  'Utilities',
-  'Entertainment',
-  'Transportation',
+  'Food & Dining', 
   'Shopping',
-  'Bills & Utilities',
+  'Bills & Utilities', 
+  'Entertainment', 
+  'Education', 
+  'Transportation', 
   'Healthcare',
-  'Education',
-  'Travel',
-  'Personal Care',
+  'Travel', 
+  'Investment',
+  'Personal Care', 
   'Other'
 ];
 

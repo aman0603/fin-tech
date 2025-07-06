@@ -17,12 +17,12 @@ const MonthlyChart = ({ transactions }: MonthlyChartProps) => {
     const daysInMonth = new Date(currentYear, currentMonth + 1, 0).getDate();
     const dailyExpenses: Record<string, number> = {};
 
-    // Initialize all days with 0
-    for (let day = 1; day <= daysInMonth; day++) {
-      const date = new Date(currentYear, currentMonth, day);
-      const dateKey = date.toISOString().split('T')[0];
-      dailyExpenses[dateKey] = 0;
-    }
+  for (let day = 1; day <= daysInMonth; day++) {
+
+  const dateKey = `${currentYear}-${String(currentMonth + 1).padStart(2, '0')}-${String(day).padStart(2, '0')}`;
+  dailyExpenses[dateKey] = 0;
+}
+
 
     // Calculate daily expenses for current month
     transactions
@@ -41,9 +41,9 @@ const MonthlyChart = ({ transactions }: MonthlyChartProps) => {
         }
       });
 
-    // Convert to chart format, showing only days with expenses or recent days
-    const today = new Date();
-    const sevenDaysAgo = new Date(today.getTime() - 7 * 24 * 60 * 60 * 1000);
+    // // Convert to chart format, showing all days up to today
+    // const today = new Date();
+    // today.setHours(23, 59, 59, 999); // Ensure we include all of today
 
     return Object.entries(dailyExpenses)
       .map(([date, amount]) => ({
@@ -51,15 +51,8 @@ const MonthlyChart = ({ transactions }: MonthlyChartProps) => {
         amount,
         day: new Date(date).getDate(),
         fullDate: new Date(date),
-      }))
-      .filter(item => item.amount > 0 || item.fullDate >= sevenDaysAgo)
-      .sort((a, b) => a.fullDate.getTime() - b.fullDate.getTime())
-      .slice(-14) // Show last 14 days with activity
-      .map(item => ({
-        day: `${item.day}`,
-        amount: item.amount,
-        date: item.date,
       }));
+      
   }, [transactions]);
 
   const CustomTooltip = ({ active, payload, label }: any) => {

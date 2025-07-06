@@ -49,13 +49,14 @@ const TransactionList = ({ transactions, onDelete, onEdit }: TransactionListProp
     // Different colors for different expense categories
     const colors = {
       'Food & Dining': 'bg-orange-100 text-orange-700 hover:bg-orange-200',
-      'Transportation': 'bg-blue-100 text-blue-700 hover:bg-blue-200',
       'Shopping': 'bg-purple-100 text-purple-700 hover:bg-purple-200',
-      'Entertainment': 'bg-pink-100 text-pink-700 hover:bg-pink-200',
       'Bills & Utilities': 'bg-red-100 text-red-700 hover:bg-red-200',
-      'Healthcare': 'bg-green-100 text-green-700 hover:bg-green-200',
+      'Entertainment': 'bg-pink-100 text-pink-700 hover:bg-pink-200',
       'Education': 'bg-indigo-100 text-indigo-700 hover:bg-indigo-200',
+      'Transportation': 'bg-blue-100 text-blue-700 hover:bg-blue-200',
+      'Healthcare': 'bg-green-100 text-green-700 hover:bg-green-200',
       'Travel': 'bg-cyan-100 text-cyan-700 hover:bg-cyan-200',
+      'Investment': 'bg-teal-100 text-teal-700 hover:bg-teal-200',
       'Personal Care': 'bg-rose-100 text-rose-700 hover:bg-rose-200',
       'Other': 'bg-gray-100 text-gray-700 hover:bg-gray-200'
     };
