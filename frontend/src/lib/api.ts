@@ -1,6 +1,6 @@
 
 // const API_BASE_URL = import.meta.env.VITE_API_BASE_URL;
-const API_BASE_URL = 'http://localhost:5000/api'; // Update this to your backend URL
+const API_BASE_URL = 'https://fin-tech-imt3.onrender.com/api'; // Update this to your backend URL
 
 interface ApiResponse<T> {
   status: 'success' | 'error';
