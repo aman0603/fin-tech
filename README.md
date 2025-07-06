@@ -86,13 +86,13 @@ frontend/
 ## 🖼️ Screenshots
 
 ### 💰 Transaction List
-![Transaction List](../public/transaction-list.png)
+![Transaction List](../frontend/public/transaction-list.png)
 
 ### 📚 Budget Management
-![Budget Management](../public/budget.png)
+![Budget Management](../frontend/public/budget.png)
 
 ### 📈 Spending Insights
-![Spending Insights](../public/insights.png)
+![Spending Insights](../frontend/public/insights.png)
 
 ---
 
