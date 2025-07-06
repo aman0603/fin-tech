@@ -89,9 +89,11 @@ git clone https://github.com/aman0603/E-comm.git
 
 **Create a .env file in the backend directory**
 
+```bash
 PORT=5000
 MONGODB_URI=<Your MongoDB connection string>
 CORS_ORIGIN=<Your Frontend url>
+```
 
 **Replace all placeholder values with your actual credentials.**
 
