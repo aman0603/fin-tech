@@ -81,10 +81,26 @@ frontend/
 └── package.json
 ```
 
+---
+
+## 🖼️ Screenshots
+
+### 💰 Transaction List
+![Transaction List](../public/transaction-list.png)
+
+### 📚 Budget Management
+![Budget Management](../public/budget.png)
+
+### 📈 Spending Insights
+![Spending Insights](../public/insights.png)
+
+---
+
+
 ##  Setup Instructions
 
 ```bash
-git clone https://github.com/aman0603/E-comm.git
+git clone https://github.com/aman0603/fin-tech
 ```
 
 **Create a .env file in the backend directory**
@@ -92,7 +108,7 @@ git clone https://github.com/aman0603/E-comm.git
 ```bash
 PORT=5000
 MONGODB_URI=<Your MongoDB connection string>
-CORS_ORIGIN=<Your Frontend url>
+NODE_ENV=development
 ```
 
 **Replace all placeholder values with your actual credentials.**
