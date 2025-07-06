@@ -1,5 +1,6 @@
 
-const API_BASE_URL = import.meta.env.VITE_API_BASE_URL;
+// const API_BASE_URL = import.meta.env.VITE_API_BASE_URL;
+const API_BASE_URL = 'http://localhost:5000/api'; // Update this to your backend URL
 
 interface ApiResponse<T> {
   status: 'success' | 'error';
@@ -23,6 +24,7 @@ export const transactionApi = {
     }
     
     const response = await fetch(`${API_BASE_URL}/transactions?${queryParams}`);
+    console.log('Fetching transactions with filters',response);
     const data: ApiResponse<any[]> = await response.json();
     if (data.status === 'error') throw new Error(data.message);
     return data.data || [];
